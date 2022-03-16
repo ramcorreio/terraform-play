@@ -15,10 +15,14 @@ provider "aws" {
 }
 
 resource "aws_instance" "app_server" {
-   ami           = "ami-08d70e59c07c61a3a"
+   ami           = "ami-0792f512117871b0b"
    instance_type = "t2.micro"
 
    tags = {
     Name = var.instance_name
    }
+
+   #lifecycle {
+   # create_before_destroy = true
+   #}
  }
